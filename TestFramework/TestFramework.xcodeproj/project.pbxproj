@@ -15,7 +15,8 @@
 		6006EB6B1D83EE9F0037C05E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6006EB691D83EE9F0037C05E /* LaunchScreen.storyboard */; };
 		6006EB761D83EE9F0037C05E /* TestFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6006EB751D83EE9F0037C05E /* TestFrameworkTests.swift */; };
 		6006EB811D83EE9F0037C05E /* TestFrameworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6006EB801D83EE9F0037C05E /* TestFrameworkUITests.swift */; };
-		6006EB971D83EFAC0037C05E /* RRSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6006EB941D83EEF10037C05E /* RRSwiftKit.framework */; };
+		60B288BB1D869DFB007EF482 /* RRSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6006EB941D83EEF10037C05E /* RRSwiftKit.framework */; };
+		60B288BC1D869DFB007EF482 /* RRSwiftKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6006EB941D83EEF10037C05E /* RRSwiftKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,28 @@
 			remoteGlobalIDString = 604AE6851D83E1A10032F3C4;
 			remoteInfo = RRSwiftKitTests;
 		};
+		60B288BD1D869DFB007EF482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6006EB8E1D83EEF10037C05E /* RRSwiftKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 604AE67B1D83E1A10032F3C4;
+			remoteInfo = RRSwiftKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60B288BF1D869DFB007EF482 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60B288BC1D869DFB007EF482 /* RRSwiftKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6006EB5A1D83EE9F0037C05E /* TestFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6006EB971D83EFAC0037C05E /* RRSwiftKit.framework in Frameworks */,
+				60B288BB1D869DFB007EF482 /* RRSwiftKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +187,12 @@
 				6006EB561D83EE9F0037C05E /* Sources */,
 				6006EB571D83EE9F0037C05E /* Frameworks */,
 				6006EB581D83EE9F0037C05E /* Resources */,
+				60B288BF1D869DFB007EF482 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				60B288BE1D869DFB007EF482 /* PBXTargetDependency */,
 			);
 			name = TestFramework;
 			productName = TestFramework;
@@ -223,6 +247,7 @@
 				TargetAttributes = {
 					6006EB591D83EE9F0037C05E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = NHH367BZU3;
 						ProvisioningStyle = Automatic;
 					};
 					6006EB701D83EE9F0037C05E = {
@@ -347,6 +372,11 @@
 			target = 6006EB591D83EE9F0037C05E /* TestFramework */;
 			targetProxy = 6006EB7D1D83EE9F0037C05E /* PBXContainerItemProxy */;
 		};
+		60B288BE1D869DFB007EF482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RRSwiftKit;
+			targetProxy = 60B288BD1D869DFB007EF482 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -409,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -453,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -465,7 +495,9 @@
 		6006EB861D83EE9F0037C05E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NHH367BZU3;
 				INFOPLIST_FILE = TestFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RDeveloper.TestFramework;
@@ -477,7 +509,9 @@
 		6006EB871D83EE9F0037C05E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NHH367BZU3;
 				INFOPLIST_FILE = TestFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RDeveloper.TestFramework;
